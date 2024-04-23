@@ -21,6 +21,8 @@ public class creature_generator : MonoBehaviour
 
     [SerializeField] private bool p;
 
+    public GameObject prefab;
+
     float cube_radius;
 
     Vector3[] cube_positions;
@@ -39,7 +41,7 @@ public class creature_generator : MonoBehaviour
         cube_positions = new Vector3[length];
         cube_sizes = new Vector3[length];
 
-        cube_radius = Mathf.Sin(multiplier * base_size / frequency);
+        
 
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -51,12 +53,14 @@ public class creature_generator : MonoBehaviour
         {
             for(int i = 0; i < length; i++)
             {
-                cube_positions[i] = new Vector3(transform.position.x, transform.position.y, transform.position.z - base_size * i);
-                cube_sizes[i] = new Vector3(cube_radius * i, cube_radius * i, cube_radius * i);
-                print(cube_radius);
+                
+                cube_sizes[i] = new Vector3(Mathf.Sin(base_size * frequency / i * multiplier), Mathf.Sin(base_size * frequency / i * multiplier), Mathf.Sin(base_size * frequency / i * multiplier));
+                cube_positions[i] = new Vector3(transform.position.x, transform.position.y, transform.position.z - (cube_sizes[i].z*cube_sizes[i].z)*i);
                 
             }
         }
+
+        
     }
 
     private void OnDrawGizmos()
