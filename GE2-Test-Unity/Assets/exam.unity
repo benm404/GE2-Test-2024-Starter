@@ -513,7 +513,7 @@ MonoBehaviour:
   mass: 1
   damping: 0.01
   banking: 0.1
-  maxSpeed: 5
+  maxSpeed: 0
   maxForce: 10
 --- !u!114 &1039729040
 MonoBehaviour:
@@ -567,11 +567,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb4562af4982bd4488a5d1f1a1bd2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 0
-  frequency: 0
-  start_angle: 0
-  base_size: 0
-  multiplier: 0
+  length: 14
+  frequency: 7
+  start_angle: 30
+  base_size: 18
+  multiplier: 29
+  p: 1
 --- !u!1 &1113860501
 GameObject:
   m_ObjectHideFlags: 0
